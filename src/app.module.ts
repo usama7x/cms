@@ -28,7 +28,6 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 import { AllConfigType } from './config/config.type';
 import { SessionModule } from './session/session.module';
 import { MailerModule } from './mailer/mailer.module';
-import { PatientsModule } from './patients/patients.module';
 
 @Module({
   imports: [
@@ -88,7 +87,6 @@ import { PatientsModule } from './patients/patients.module';
     MailModule,
     MailerModule,
     HomeModule,
-    PatientsModule,
   ],
 })
 export class AppModule {}

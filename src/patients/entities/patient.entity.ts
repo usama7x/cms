@@ -11,7 +11,7 @@ export class Patient {
   @Column({ nullable: true })
   lastName: string;
 
-  @Column({ type: 'timestamp without time zone', nullable: true })
+  @Column({ type: 'timestamp with time zone', nullable: true })
   dob: Date;
 
   @Column({ nullable: true })

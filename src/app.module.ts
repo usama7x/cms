@@ -32,6 +32,7 @@ import { PatientsModule } from './patients/patients.module';
 import { MedicineModule } from './medicine/medicine.module';
 import { VendorModule } from './vendor/vendor.module';
 import { StockModule } from './stock/stock.module';
+import { StockHistoryModule } from './stock-history/stock-history.module';
 
 @Module({
   imports: [
@@ -95,6 +96,7 @@ import { StockModule } from './stock/stock.module';
     MedicineModule,
     VendorModule,
     StockModule,
+    StockHistoryModule,
   ],
 })
 export class AppModule {}

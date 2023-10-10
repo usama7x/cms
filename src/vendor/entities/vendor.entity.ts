@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { StockHistory } from 'src/stock-history/entities/stock-history.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
 export class Vendor {
@@ -22,4 +23,7 @@ export class Vendor {
 
   @Column({ type: 'timestamptz' })
   deletedAt: Date;
+
+  @OneToMany(() => StockHistory, stockHistory => stockHistory.vendor)
+  stockHistory: StockHistory[];
 }

@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { StockHistory } from 'src/stock-history/entities/stock-history.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Medicine {
@@ -40,4 +41,7 @@ export class Medicine {
 
   @Column({ type: 'timestamptz' })
   deletedAt: Date;
+
+  @OneToMany(() => StockHistory, stockHistory => stockHistory.medicine)
+  stockHistory: StockHistory[];
 }

@@ -31,6 +31,7 @@ import { MailerModule } from './mailer/mailer.module';
 import { PatientsModule } from './patients/patients.module';
 import { MedicineModule } from './medicine/medicine.module';
 import { VendorModule } from './vendor/vendor.module';
+import { StockModule } from './stock/stock.module';
 
 @Module({
   imports: [
@@ -93,6 +94,7 @@ import { VendorModule } from './vendor/vendor.module';
     PatientsModule,
     MedicineModule,
     VendorModule,
+    StockModule,
   ],
 })
 export class AppModule {}

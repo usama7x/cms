@@ -1,4 +1,3 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -6,42 +5,42 @@ export class Patient {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   firstName: string;
 
-  @Column()
+  @Column({ nullable: true })
   lastName: string;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'timestamp with time zone', nullable: true })
   dob: Date;
 
-  @Column()
+  @Column({ nullable: true })
   gender: string;
 
-  @Column()
+  @Column({ nullable: true })
   address: string;
 
-  @Column()
+  @Column({ nullable: true })
   guardianName: string;
 
-  @Column()
+  @Column({ nullable: true })
   phoneNumber: string;
 
-  @Column({ type: 'int'})
+  @Column({ type: 'int', nullable: true })
   age: number;
 
-  @Column({ type: 'simple-array' })
+  @Column({ type: 'simple-array', nullable: true })
   healthProblems: string[];
 
-  @Column({ type: 'simple-array' })
+  @Column({ type: 'simple-array', nullable: true })
   medication: string[];
 
-  @Column({type: 'timestamptz'})
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   createdAt: Date;
 
-  @Column({type: 'timestamptz'})
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   updatedAt: Date;
 
-  @Column({type: 'timestamptz'})
+  @Column({ type: 'timestamp with time zone' })
   deletedAt: Date;
 }

@@ -5,39 +5,39 @@ export class Medicine {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
-  @Column()
+  @Column({ nullable: true })
   type: string;
 
-  @Column()
+  @Column({ nullable: true })
   description: string;
 
-  @Column()
+  @Column({ nullable: true })
   ageLimit: number;
 
-  @Column({ type: 'simple-array' })
+  @Column({ type: 'simple-array', nullable: true })
   sideEffects: string[];
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   manufacturingDate: Date;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   expiryDate: Date;
 
-  @Column()
+  @Column({ nullable: true })
   pricePerUnit: number;
 
-  @Column()
+  @Column({ nullable: true })
   uom: string;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   createdAt: Date;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   updatedAt: Date;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   deletedAt: Date;
 }

@@ -5,21 +5,21 @@ export class Vendor {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
-  @Column()
+  @Column({ nullable: true })
   phoneNumber: string;
 
-  @Column()
+  @Column({ nullable: true })
   address: string;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   createdAt: Date;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   updatedAt: Date;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   deletedAt: Date;
 }

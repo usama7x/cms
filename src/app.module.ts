@@ -29,6 +29,11 @@ import { AllConfigType } from './config/config.type';
 import { SessionModule } from './session/session.module';
 import { MailerModule } from './mailer/mailer.module';
 import { PatientsModule } from './patients/patients.module';
+import { MedicineModule } from './medicine/medicine.module';
+import { VendorModule } from './vendor/vendor.module';
+import { StockModule } from './stock/stock.module';
+import { StockHistoryModule } from './stock-history/stock-history.module';
+import { PatientModule } from './patient/patient.module';
 
 @Module({
   imports: [
@@ -89,6 +94,11 @@ import { PatientsModule } from './patients/patients.module';
     MailerModule,
     HomeModule,
     PatientsModule,
+    MedicineModule,
+    VendorModule,
+    StockModule,
+    StockHistoryModule,
+    PatientModule,
   ],
 })
 export class AppModule {}

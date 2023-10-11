@@ -1,4 +1,3 @@
-// import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Medicine } from 'src/medicine/entities/medicine.entity';
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 
@@ -11,6 +10,9 @@ export class Stock {
   @JoinColumn()
   medicine: Medicine
 
+  @Column({ type: 'int' })
+  quantity: number;
+
   @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   createdAt: Date;
 
@@ -19,5 +21,4 @@ export class Stock {
 
   @Column({ type: 'timestamp with time zone' })
   deletedAt: Date;
-
 }

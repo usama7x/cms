@@ -3,13 +3,13 @@ import { Injectable } from '@nestjs/common';
 // import { UpdatePatientInput } from './dto/update-patient.input';
 
 @Injectable()
-export class PatientsService {
+export class PatientService {
   // create(createPatientInput: CreatePatientInput) {
   //   return 'This action adds a new patient';
   // }
 
   findAll() {
-    return `This action returns all patients`;
+    return `This action returns all patient`;
   }
 
   findOne(id: number) {

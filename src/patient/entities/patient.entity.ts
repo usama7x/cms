@@ -44,3 +44,4 @@ export class Patient {
   @Column({ type: 'timestamp with time zone' })
   deletedAt: Date;
 }
+

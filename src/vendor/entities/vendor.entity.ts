@@ -1,29 +1,25 @@
-import { StockHistory } from 'src/stock-history/entities/stock-history.entity';
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Vendor {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
-  @Column()
+  @Column({ nullable: true })
   phoneNumber: string;
 
-  @Column()
+  @Column({ nullable: true })
   address: string;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   createdAt: Date;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone', default: 'NOW()' })
   updatedAt: Date;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamp with time zone' })
   deletedAt: Date;
-
-  @OneToMany(() => StockHistory, stockHistory => stockHistory.vendor)
-  stockHistory: StockHistory[];
 }

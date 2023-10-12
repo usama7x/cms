@@ -35,6 +35,7 @@ import { StockHistoryModule } from './stock-history/stock-history.module';
 import { PatientModule } from './patient/patient.module';
 import { CheckupModule } from './checkup/checkup.module';
 import { CheckupMedicineModule } from './checkup-medicine/checkup-medicine.module';
+import { EmployeeModule } from './employee/employee.module';
 
 @Module({
   imports: [
@@ -101,6 +102,7 @@ import { CheckupMedicineModule } from './checkup-medicine/checkup-medicine.modul
     PatientModule,
     CheckupModule,
     CheckupMedicineModule,
+    EmployeeModule,
   ],
 })
 export class AppModule {}

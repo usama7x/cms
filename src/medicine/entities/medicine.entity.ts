@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Checkup } from 'src/checkup/entities/checkup.entity';
+import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Medicine {
@@ -40,4 +41,8 @@ export class Medicine {
 
   @Column({ type: 'timestamp with time zone' })
   deletedAt: Date;
+
+  @ManyToMany(() => Checkup)
+  @JoinTable({name:'checkup_medicine'})
+  checkup: Checkup[];
 }

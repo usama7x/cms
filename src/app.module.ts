@@ -28,12 +28,13 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 import { AllConfigType } from './config/config.type';
 import { SessionModule } from './session/session.module';
 import { MailerModule } from './mailer/mailer.module';
-import { PatientsModule } from './patients/patients.module';
 import { MedicineModule } from './medicine/medicine.module';
 import { VendorModule } from './vendor/vendor.module';
 import { StockModule } from './stock/stock.module';
 import { StockHistoryModule } from './stock-history/stock-history.module';
 import { PatientModule } from './patient/patient.module';
+import { CheckupModule } from './checkup/checkup.module';
+import { CheckupMedicineModule } from './checkup-medicine/checkup-medicine.module';
 
 @Module({
   imports: [
@@ -93,12 +94,13 @@ import { PatientModule } from './patient/patient.module';
     MailModule,
     MailerModule,
     HomeModule,
-    PatientsModule,
     MedicineModule,
     VendorModule,
     StockModule,
     StockHistoryModule,
     PatientModule,
+    CheckupModule,
+    CheckupMedicineModule,
   ],
 })
 export class AppModule {}

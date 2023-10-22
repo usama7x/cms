@@ -1,47 +1,62 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
+@ObjectType()
 export class Patient {
+  @Field()
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Field()
   @Column()
   firstName: string;
 
+  @Field()
   @Column()
   lastName: string;
 
+  @Field()
   @Column({ type: 'date' })
   dob: Date;
 
+  @Field()
   @Column()
   gender: string;
 
+  @Field()
   @Column()
   address: string;
 
+  @Field()
   @Column()
   guardianName: string;
 
   @Column()
+  @Field()
   phoneNumber: string;
 
-  @Column({ type: 'int'})
+  @Field()
+  @Column({ type: 'int' })
   age: number;
 
+  @Field(() => [String])
   @Column({ type: 'simple-array' })
   healthProblems: string[];
 
+  @Field(() => [String])
   @Column({ type: 'simple-array' })
   medication: string[];
 
-  @Column({type: 'timestamptz'})
+  @Field()
+  @Column({ type: 'timestamptz' })
   createdAt: Date;
 
-  @Column({type: 'timestamptz'})
+  @Field()
+  @Column({ type: 'timestamptz' })
   updatedAt: Date;
 
-  @Column({type: 'timestamptz'})
+  @Field()
+  @Column({ type: 'timestamptz' })
   deletedAt: Date;
 }
